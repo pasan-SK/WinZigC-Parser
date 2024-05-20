@@ -1,0 +1,3 @@
+for i in {1..15}; do java winzigc -ast "winzig_test_programs/winzig_$(printf "%02d" $i)" > "tree.$(printf "%02d" $i)"; done
+
+for i in {1..15}; do diff "tree.$(printf "%02d" $i)" "winzig_test_programs/winzig_$(printf "%02d" $i).tree" -w; done
